@@ -3,9 +3,10 @@ require_relative '../lib/concerns/memorable'
 class Artist
   attr_accessor :name
   attr_reader :songs
- extend Memorable::ClassMethods
-include Memorable::InstanceMethods
-
+   extend Memorable::ClassMethods
+  extend Findable::ClassMethods
+  include Memorable::InstanceMethods
+  include Paramable::InstanceMethods
   @@artists = []
 
   def initialize
